@@ -26,7 +26,7 @@ def document_process(path):
     documents = text_splitter.split_documents(documents)
 
     # Create embeddings and vector store
-    embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-2-preview")
+    embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
     vectorstore = InMemoryVectorStore.from_documents(documents=documents, embedding=embeddings)
 
     st.session_state.vectorstore = vectorstore
